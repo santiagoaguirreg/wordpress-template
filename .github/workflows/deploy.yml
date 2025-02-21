@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Conectar a EC2 y actualizar código del tema Kadence
+      - name: Conectar a EC2 y actualizar código
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -19,4 +19,5 @@ jobs:
             cd /var/www/html/wp-content/themes/kadence
             git pull origin main
             sudo systemctl restart apache2 || sudo systemctl restart nginx
+
 
