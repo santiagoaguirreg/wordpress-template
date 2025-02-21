@@ -29,3 +29,9 @@ require get_template_directory() . '/inc/functions.php';
 
 // Initialize the theme.
 call_user_func( 'Kadence\kadence' );
+
+//Prueba
+function custom_footer_message() {
+    echo '<p style="text-align: center; font-weight: bold; color: red;">Este es un mensaje de prueba - Última actualización: ' . date('Y-m-d H:i:s') . '</p>';
+}
+add_action('wp_footer', 'custom_footer_message');
